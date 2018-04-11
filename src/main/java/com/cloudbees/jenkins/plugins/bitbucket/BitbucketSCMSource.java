@@ -1059,7 +1059,7 @@ public class BitbucketSCMSource extends SCMSource {
                         .set("id", pr.getId());
             } else {
                 template = UriTemplate
-                        .fromTemplate(getServerUrl() + SERVER_REPO_TEMPLATE + "/compare/commits{?sourceBranch}")
+                        .fromTemplate(getServerUrl() + SERVER_REPO_TEMPLATE + "/browse?at=refs/heads/" + head.getName())
                         .set("owner", repoOwner)
                         .set("repo", repository)
                         .set("sourceBranch", Constants.R_HEADS + head.getName());
